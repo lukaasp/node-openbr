@@ -1,0 +1,39 @@
+<div>
+  <h3>REST API</h3>
+
+  <ul>
+    <li>
+      <em>path:</em> '/openbr/faces'
+      <div><em>method:</em> 'GET'</div>
+      <div><em>response: </em> [{name:'thename', fileName: 'filename'}, {name:'thename', fileName: 'filename'}, ...]</div>
+    </li>
+    <li>
+      path: '/openbr/faces/{filename}'
+      <div><em>method:</em> 'GET'</div>
+      <div><em>response: </em> filename (example: '/openbr/faces/bruce_willis.jpg')</div>
+    </li>
+    <li>
+      path: '/openbr/faces',
+      <div><em>method:</em> 'POST'</div>
+      <div><em>payload: </em> {name:'thename', image:'base64imagestring...'}</div>
+      <div><em>response: </em> {name:'thename'})</div>
+    </li>
+    <li>
+      path: '/openbr/faces/{name}',
+      <div><em>method:</em> 'DELETE'</div>
+      <div><em>response: </em> {deleted:'name', left:[{name:'thename', fileName: 'filename'}, {name:'thename', fileName: 'filename'}...]}</div>
+    </li>
+    <li>
+      path: '/openbr/identify',
+      <div><em>method:</em> 'POST'</div>
+      <div><em>payload: </em> {image:'base64imagestring...'}</div>
+      <div><em>response: </em> [{name: 'thename', score: score}, ...]</div>
+    </li>
+    <li>
+      path: '/openbr/compare',
+      <div><em>method:</em> 'POST'</div>
+      <div><em>payload: </em> {image1:'base64imagestring...', image2:'base64imagestring...'}</div>
+      <div><em>response: </em> score</div>
+    </li>
+  </ul>
+</div>
