@@ -1,6 +1,6 @@
 {
   "name": "node-openbr-backend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "description": "OpenBR backend.",
   "author": {
@@ -16,9 +16,10 @@
     "lib"
   ],
   "dependencies": {
-    "hapi": "^13.3.0",
-    "inert": "^3.2.0",
-    "q": "^1.4.1",
-    "request": "^2.70.0"
+    "chokidar": "1.4.3",
+    "hapi": "13.3.0",
+    "inert": "3.2.0",
+    "q": "1.4.1",
+    "request": "2.70.0"
   }
 }
