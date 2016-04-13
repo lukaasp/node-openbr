@@ -6,4 +6,5 @@ RUN npm install
 
 CMD ["forever","index.js","-p","80"]
 
+VOLUME ["/opt/app/lib/openbr/enrollData"]
 EXPOSE 80
