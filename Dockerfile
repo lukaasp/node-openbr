@@ -5,3 +5,5 @@ WORKDIR /opt/app
 RUN npm install
 
 CMD ["forever","index.js","-p","80"]
+
+EXPOSE 80
