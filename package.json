@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "chokidar": "1.4.3",
+    "csvtojson": "^0.5.3",
     "hapi": "13.3.0",
     "inert": "3.2.0",
     "q": "1.4.1",
