@@ -1,123 +1,156 @@
 <div>
-  <h3>REST API</h3>
+    <h3>REST API</h3>
 
-  <ul>
-    <li>
-      <em>path:</em> '/openbr/faces'
-      <div><em>method:</em> 'GET'</div>
-      <div><em>response: </em> [{name:'thename', fileName: 'filename'}, {name:'thename', fileName: 'filename'}, ...]</div>
-    </li>
-    <li>
-      path: '/openbr/faces/{filename}'
-      <div><em>method:</em> 'GET'</div>
-      <div><em>response: </em> filename (example: '/openbr/faces/bruce_willis.jpg')</div>
-    </li>
-    <li>
-      path: '/openbr/faces',
-      <div><em>method:</em> 'POST'</div>
-      <div><em>payload: </em> {name:'thename', image:'base64imagestring...'}</div>
-      <div><em>response: </em> {name:'thename'})</div>
-    </li>
-    <li>
-      path: '/openbr/faces/{name}',
-      <div><em>method:</em> 'DELETE'</div>
-      <div><em>response: </em> {deleted:'name', left:[{name:'thename', fileName: 'filename'}, {name:'thename', fileName: 'filename'}...]}</div>
-    </li>
-    <li>
-      path: '/openbr/identify',
-      <div><em>method:</em> 'POST'</div>
-      <div><em>payload: </em> {image:'base64imagestring...'}</div>
-      <div><em>response: </em> [{name: 'thename', score: score}, ...]</div>
-    </li>
-    <li>
-      path: '/openbr/compare',
-      <div><em>method:</em> 'POST'</div>
-      <div><em>payload: </em> {image1:'base64imagestring...', image2:'base64imagestring...'}</div>
-      <div><em>response: </em> score</div>
-    </li>
-  </ul>
+    <ul>
+        <li>
+            <em>path:</em> '/openbr/faces'
+            <div><em>method:</em> 'GET'</div>
+            <div><em>response: </em> [{name:'thename', fileName: 'filename'}, {name:'thename', fileName: 'filename'},
+                ...]
+            </div>
+        </li>
+        <li>
+            path: '/openbr/faces/{filename}'
+            <div><em>method:</em> 'GET'</div>
+            <div><em>response: </em> filename (example: '/openbr/faces/bruce_willis.jpg')</div>
+        </li>
+        <li>
+            path: '/openbr/faces',
+            <div><em>method:</em> 'POST'</div>
+            <div><em>payload: </em> {name:'thename', image:'base64imagestring...'}</div>
+            <div><em>response: </em> {name:'thename'})</div>
+        </li>
+        <li>
+            path: '/openbr/faces/{name}',
+            <div><em>method:</em> 'DELETE'</div>
+            <div><em>response: </em> {deleted:'name', left:[{name:'thename', fileName: 'filename'}, {name:'thename',
+                fileName: 'filename'}...]}
+            </div>
+        </li>
+        <li>
+            path: '/openbr/identify',
+            <div><em>method:</em> 'POST'</div>
+            <div><em>payload: </em> {image:'base64imagestring...'}</div>
+            <div><em>response: </em> [{name: 'thename', score: score}, ...]</div>
+        </li>
+        <li>
+            path: '/openbr/compare',
+            <div><em>method:</em> 'POST'</div>
+            <div><em>payload: </em> {image1:'base64imagestring...', image2:'base64imagestring...'}</div>
+            <div><em>response: </em> score</div>
+        </li>
+    </ul>
 </div>
-<div>
-  <h3>Application overview</h3>
-  <img src="/openbr/docs/schema.jpg">
 
-</div>
 <div>
-  <h3>Tasks</h3>
-  <ol>
-    <li>
-      <h4>Warm-up no.1.1 - see 'ListCtrl'</h4>
-      <p>
-        Get the list of faces from back-end and assign it to appropriate $scope variable.
-      </p>
-      <em>Hints:</em> 'Faces' in services.js, list.html
-    </li>
-    <li>
-      <h4>Warm-up no.1.2 - see 'DeleteCtrl'</h4>
-      <p>
-        Item is being deleted - assign response to appropriate $scope variable and show the message in template.
-      </p>
-      <em>Hints:</em> ng-show
-    </li>
-    <li>
-      <h4>Warm-up no.2 - see 'PictureCtrl'</h4>
-      <p>
-        Get the name from text input and use it to assemble path to picture; assign the assembled path to appropriate $scope variable so the picture would be viewed in template.
-      </p>
-      <em>Hints:</em> get_picture.html, ng-model, ng-src
-    </li>
-    <li>
-      <h4>Task no.1 - see 'LiveCaptureCtrl'</h4>
-      <p>
-        Sort response from 'identify' by highest value - either inside of '$scope.identify' or directly in the service.
-      </p>
-        <em>Hints:</em> post callback, array sort() comparator
-    </li>
-    <li>
-      <h4>Task no.2 - see 'LiveCaptureCtrl'</h4>
-      <p>
-        Change the flow of identifying: take a snapshot, then identify. You will need to add additional button for that.
-      </p>
-      <em>Hints:</em> $scope.getData, $scope.identify
-    </li>
-    <li>
-      <h4>Task no.3 - see 'layouts'</h4>
-      <p>
-        Beautify main layout and/ or partial layouts by using css (including twitter bootstrap), font awesome, or any tricks you wish.
-      </p>
-    </li>
-    <li>
-      <h4>Task no.4 - see 'ListCtrl' and 'list.html'</h4>
-      <p>
-        Implement removing user from the list in two steps: when clicked on user from the list, show delete button, then by clicking the button, user is deleted, success message shows and delete button hidden. See 'DeleteCtrl' on how to use service to remove user.
-      </p>
-    </li>
-    <li>
-      <h4>Task no.5 - see 'LiveCaptureCtrl'</h4>
-      <p>
-        Compare 2 shots from camera - requires modifying controller, services and template
-      </p>
-    </li>
-  </ol>
-  <h3>Homework tasks</h3>
-  <ol>
-    <li>
-      <h4>Homework no.1 - directives</h4>
-      <p>
-        Create your own webcam or file input directives.
-      </p>
-    </li>
-    <li>
-      <h4>Homework no.2 - new features - frontend & backend</h4>
-      <p>
-        Go to  <a href="http://openbiometrics.org">openbiometrics.org</a> and see additional features - age and gender estimation. Implement them into existing backend. Implement this features into front-end as well.
-      </p>
-    </li>
-    <li>
-      <h4>Homework no.3 - advanced backend homework</h4>
-      <p>
-        Implement openbiometrics.org source as a Node.js module. See currently not working <a href="https://github.com/sarattall/node-openbr">attempt</a>.
-      </p>
-    </li>
-  </ol>
+
+    <h2>Tasks</h2>
+
+    <h3>Exercise 1</h3>
+
+    <em>Files:</em> app/user/user.controller.js, user.factory.js, user-list.html
+
+    <h4>Task no.1.1</h4>
+    <p>
+        Get the list of faces from back-end and assign it to appropriate $scope variable, make the list load at
+        start.
+    </p>
+
+    <h4>Task no.1.2</h4>
+    <p>
+        Disable 'List' button until we get data back from server.
+    </p>
+    <hr/>
+
+    <h3>Exercise 2</h3>
+
+    <em>Files: </em> app/pic-mngmt/pic-mngmt.controller.js, get-picture.html
+
+    <h4>Task no.2.1</h4>
+    <p>
+        Get the name from text input and use it to assemble path to picture.
+    </p>
+
+    <h4>Task no.2.2</h4>
+    <p>
+        Images loaded are out of bounds, make the image responsive.
+    </p>
+    <hr/>
+
+    <h3>Exercise 3</h3>
+
+    <em>Files: </em> app/user/user.controller.js, user.factory.js, delete.html
+
+    <h4>Task no.3.1</h4>
+    <p>
+        Item is being deleted - assign response to appropriate $scope variable.
+    </p>
+
+    <h4>Task no.3.2</h4>
+    <p>
+        Update list of users on delete.
+    </p>
+
+    <h4>Task no.3.3</h4>
+    <p>
+        Catch error response.
+    </p>
+
+    <h4>Task no.3.4</h4>
+    <p>
+        Use toastr to add some funny error message.
+    </p>
+
+    <h4>Task no.3.5</h4>
+    <p>
+        Two-step delete - on 'delete' button click show yes/no buttons, only after clicking 'yes' button proceed with
+        delete.
+    </p>
+    <hr/>
+
+    <h3>Exercise 4/5</h3>
+
+    <em>Files: </em> app/face-recognition/recognition.controller.js, live-capture.html
+
+    <h4>Task no.4.1</h4>
+    <p>
+        Sort the response according to score.
+    </p>
+
+    <h4>Task no.4.2</h4>
+    <p>
+        Show most similar image.
+    </p>
+
+    <h4>Task no.5</h4>
+    <p>
+        Implement form validation in live-capture.html id="liveCaptureName" - disable enroll button on validation error.
+    </p>
+    <hr/>
+
+    <h3>Exercise 6</h3>
+
+    <em>Files: </em> app/comparison/comparison.factory.js, comparison-controller.js
+
+    <h4>Task no.6.1</h4>
+    <p>
+        Implement this function by using already existing helper methods and promises.
+    </p>
+
+    <h4>Task no.6.2</h4>
+    <p>
+        Use comparison factory to compare 2 pictures and view the results.
+    </p>
+
+    <hr/>
+
+    <h3>Exercise 7</h3>
+
+    <em>Files: </em> app/user/user-detail/*
+
+    <p>
+        Implement user-detail directive.
+    </p>
+
+
 </div>
