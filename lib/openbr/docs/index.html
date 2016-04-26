@@ -53,12 +53,12 @@
     <h4>Task no.1.1</h4>
     <p>
         Get the list of faces from back-end and assign it to appropriate $scope variable, make the list load at
-        start.
+        start. (utilize <a href="https://docs.angularjs.org/api/ng/service/$http">$http</a>, <a href="https://docs.angularjs.org/api/ng/directive/ngClick">ng-click</a>, <a href="http://www.w3schools.com/angular/ng_ng-repeat.asp">ng-repeat</a>
     </p>
 
     <h4>Task no.1.2</h4>
     <p>
-        Disable 'List' button until we get data back from server.
+        Disable 'List' button until we get data back from server. (utilize <a href="https://docs.angularjs.org/api/ng/directive/ngDisabled">ng-disabled</a>
     </p>
     <hr/>
 
@@ -68,88 +68,147 @@
 
     <h4>Task no.2.1</h4>
     <p>
-        Get the name from text input and use it to assemble path to picture.
+        Get the name from text input and use it to assemble path to picture. (utilize <a href="https://docs.angularjs.org/api/ng/directive/ngModel">ng-model</a>, <a href="https://docs.angularjs.org/api/ng/directive/ngSrc">ng-src</a>)
     </p>
 
     <h4>Task no.2.2</h4>
     <p>
-        Images loaded are out of bounds, make the image responsive.
+        Images loaded are out of bounds, make the image responsive. (utilize <a href="http://getbootstrap.com/css/#images-responsive">bootstrap</a>)
     </p>
     <hr/>
 
     <h3>Exercise 3</h3>
 
-    <em>Files: </em> app/user/user.controller.js, user.factory.js, delete.html
+    <em>Files: </em> app/face-recognition/recognition.controller.js, app/face-recognition/live-capture.html
 
     <h4>Task no.3.1</h4>
     <p>
-        Item is being deleted - assign response to appropriate $scope variable.
+        Add webcam directive (utilize <a href="https://github.com/jonashartmann/webcam-directive#set-a-channel-to-bind-data">webcam</a>)
     </p>
 
     <h4>Task no.3.2</h4>
     <p>
-        Update list of users on delete.
+        Enroll user using live capture (utilize ng-model, User.add from user/user.factory.js, <a href="https://docs.angularjs.org/api/ng/directive/ngModel">ng-model</a>)
     </p>
 
     <h4>Task no.3.3</h4>
     <p>
-        Catch error response.
+        Display info about (un)successful enrollment. (utilize <a href="https://docs.angularjs.org/api/ng/directive/ngShow">ng-show</a>)
     </p>
 
     <h4>Task no.3.4</h4>
     <p>
-        Use toastr to add some funny error message.
+        Identify top matches for captured image. (utilize `sendImage` from ./recognition.factory.js, ng-repeat)
     </p>
 
     <h4>Task no.3.5</h4>
     <p>
-        Two-step delete - on 'delete' button click show yes/no buttons, only after clicking 'yes' button proceed with
-        delete.
+        Sort matches according to score (resemblance).
+    </p>
+    
+    <h4>Task no.3.6</h4>
+    <p>
+        Show captured image used for identification. 
+    </p>
+    
+    <h4>Task no.3.7</h4>
+    <p>
+        Show top matched image.
+    </p>
+    
+    <h4>Task no.3.8</h4>
+    <p>
+        List only TOP 5 matches. (utilize <a href="https://docs.angularjs.org/api/ng/filter">filter</a>)
     </p>
     <hr/>
 
-    <h3>Exercise 4/5</h3>
+    <h3>Exercise 4</h3>
 
-    <em>Files: </em> app/face-recognition/recognition.controller.js, live-capture.html
+    <em>Files: </em> app/user/user-detail/*
 
-    <h4>Task no.4.1</h4>
+    <h4>Task no.4.1</h4> 
     <p>
-        Sort the response according to score.
+        Create custom directive that displays user name and user picture.
     </p>
 
-    <h4>Task no.4.2</h4>
+    <h4>Task no.4.2</h4> 
+    <em>Files: </em> app/comparison/compare-users.html
     <p>
-        Show most similar image.
-    </p>
-
-    <h4>Task no.5</h4>
-    <p>
-        Implement form validation in live-capture.html id="liveCaptureName" - disable enroll button on validation error.
+        Use custom directive. 
     </p>
     <hr/>
 
+    <h3>Excercise 5</h3>
+    <em>Files:</em> app/comparison/compare-users.html, app/comparison/comparison.controller.js
+    <h4>Task no.5.1</h4>
+    <p>
+        Compare two users. 
+    </p>
+    
+    <h4>Task no.5.2</h4>
+    <p>
+        Select user to compare. On click on thumbnail image, set second compared image as first and clicked image as second. 
+    </p>
+    
+    <h4>Task no.5.3</h4>
+    <p>
+        List last 5 comparisons and their result
+    </p>
+    <hr/>
+    
     <h3>Exercise 6</h3>
 
-    <em>Files: </em> app/comparison/comparison.factory.js, comparison-controller.js
+    <em>Files: </em> app/user/user.controller.js, app/user/delete.html
 
     <h4>Task no.6.1</h4>
     <p>
-        Implement 'compare' function by using already existing helper methods and promises.
+        Delete user. 
     </p>
 
     <h4>Task no.6.2</h4>
     <p>
-        Use comparison factory to compare 2 pictures and view the results.
+        Delete user only after confirmation.
+    </p>
+    
+    <h4>Task no.6.3</h4>
+    <p>
+        Display information about deletion process.
     </p>
 
     <hr/>
 
-    <h3>Exercise 7</h3>
+    <h3>Bonus excercises</h3>
 
-    <em>Files: </em> app/user/user-detail/*
+    <h4>Bonus Task 1</h4>
+    <em>Files: </em> app/user/user.factory.js
 
     <p>
-        Implement user-detail directive.
+        Update list of users on every successful enrollment (utilize <a href="https://docs.angularjs.org/api/ng/service/$q">$q</a>)
+    </p>
+    
+    <h4>Bonus Task 2</h4>
+    <em>Files:</em> app/user/user.factory.js
+    <p>
+        Update list of users on every successful removal (utilize <a href="https://docs.angularjs.org/api/ng/service/$q">$q</a>)
+    </p>    
+    
+    <h4>Baonus Task 3</h4>
+    <em>Files:</em> app/user/user-list.html
+    <p>
+        Filter registered users (use ng-model and <a href="https://docs.angularjs.org/api/ng/filter">`filter` filter</a>
+    </p>
+    
+    <h4>Baonus Task 4</h4>
+    <em>Files:</em> app/user/user-list.html
+    <p>
+        Animate items entering list (<a href="https://docs.angularjs.org/api/ngAnimate#css-based-animations">ng-animate</a>)
+    </p>
+    
+    <h4>Baonus Task 5</h4>
+    <em>Files:</em> app/user/user.controller.js
+    <p>
+        Use Toastr to display success/error message
+        (<a href="https://github.com/CodeSeven/toastr#3-easy-steps">https://github.com/CodeSeven/toastr#3-easy-steps</a>)
     </p>
 
 
