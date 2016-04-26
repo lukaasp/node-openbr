@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 docker run --name openbr1 -v /opt/enrolldata:/opt/app/lib/openbr/enrollData -d lukaasp/node-openbr:gallery
 docker run --name openbr2 -v /opt/enrolldata:/opt/app/lib/openbr/enrollData -d lukaasp/node-openbr:gallery
 docker run --name openbr3 -v /opt/enrolldata:/opt/app/lib/openbr/enrollData -d lukaasp/node-openbr:gallery
